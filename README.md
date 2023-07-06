@@ -9,4 +9,4 @@
 1、安装python库  
 `pip install -r requirements.txt`  
 2、打开Vtube studio,找到启用API选项并打开  
-3、打开voicevox,注意不是打开VOICEVOX.exe,而是*run.exe*
+3、打开voicevox,注意不是打开VOICEVOX.exe,而是**run.exe**
