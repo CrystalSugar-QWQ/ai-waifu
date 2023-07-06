@@ -14,7 +14,7 @@
    动作输入将Mouth Smile的输入改为**VoiceVolume**,将Mouth Open的输入改为**VoiceFrequency**  
 3、打开voicevox,注意不是打开VOICEVOX.exe,而是**run.exe**  
 4、找到config.py文件，填入你[openai API](https://platform.openai.com/account/api-keys)  
-5、启动前打开音量合成器,将程序的输入改成你的麦克风,输出改为__CABLE Input  
+5、启动前打开音量合成器,将程序的输入改成**你的麦克风**,输出改为**CABLE Input**  
 6、启动后若频繁触发语音录入,请进入VoiceRW/tts.py中,找到`audio_listien`函数中的音量阈值参数,调高它,反之无法触发调小它  
 7、B站直播间弹幕获取也是有的,进入blivedm/sample.py,在`TEST_ROOM_IDS`填入直播间id,  
 再找到`class MyHandler(blivedm.BaseHandler)`函数，`_on_danmaku`里面有触发问答的方式,比如弹幕里提到**白糖**,AI就会回复  
