@@ -19,4 +19,4 @@
 6、启动后若频繁触发语音录入,请进入VoiceRW/tts.py中,找到`audio_listien`函数中的音量阈值参数,调高它,反之无法触发调小它  
 7、B站直播间弹幕获取也是有的,进入blivedm/sample.py,在`TEST_ROOM_IDS`填入直播间id,  
 再找到`class MyHandler(blivedm.BaseHandler)`函数，`_on_danmaku`里面有触发问答的方式,比如弹幕里提到**白糖**,AI就会回复  
-`if "白糖" in message.msg:`触发是这一段捏  
+`if "白糖" in message.msg:`触发是这一段捏,可以多改改设定成只回复特定话题  
