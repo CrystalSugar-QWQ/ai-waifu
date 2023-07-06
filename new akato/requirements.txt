@@ -1,0 +1,10 @@
+aiohttp==3.7.4
+Brotli==1.0.9
+googletrans==3.0.0
+keyboard==0.13.5
+numpy==1.25.0
+openai==0.27.8
+PyAudio==0.2.13
+Requests==2.31.0
+SpeechRecognition==3.10.0
+websockets==11.0.3
