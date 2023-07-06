@@ -7,4 +7,4 @@
 2、[下载voicevox语音合成软件](https://voicevox.hiroshiba.jp/)  
 ## 正式使用
 1、安装库  
-'pip install -r requirements.txt'
+`pip install -r requirements.txt`
