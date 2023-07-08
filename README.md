@@ -3,6 +3,7 @@
 由于作者刚学习python一个月,能力有限见谅  
 想更改设定于openao/identity.txt里更改
 有问题或技术支持请联系+Q：1262852040  
+python版本3.10  
 ## 使用的外部软件
 1、下载Vtube studio软件，于steam上下载即可  
 2、[下载voicevox语音合成软件](https://voicevox.hiroshiba.jp/)  
