@@ -1,5 +1,5 @@
 # ai-waifu
-本项目主旨是做一个ai-waifu,能灵活自由聊天的ai  
+本项目主旨是做一个ai-waifu,能灵活自由聊天的ai[效果视频](https://www.bilibili.com/video/BV1Qa4y1F7qN/?share_source=copy_web&vd_source=be871ab215f9686e9cf85ae02546df3f)  
 由于作者刚学习python一个月,能力有限见谅  
 想更改设定于openao/identity.txt里更改
 有问题或技术支持请联系+Q：1262852040  
