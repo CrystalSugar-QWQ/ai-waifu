@@ -197,7 +197,7 @@ if __name__ == '__main__':
 
     # 创建进程并启动 ps:别问我为什么只开进程，懒的
     p1 = multiprocessing.Process(target=ask_out, args=(question, message, question2, tts_data))
-    # p1.start()
+    p1.start()
     p2 = multiprocessing.Process(target=vtube_sport, args=(action_data,))
     p2.start()
     p3 = multiprocessing.Process(target=BliveDM, args=(question, ))
