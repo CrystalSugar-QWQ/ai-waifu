@@ -1,4 +1,4 @@
-import utils as utils
+import vts.uutils as utils
 import json
 
 file_json = "config.json"   # 秘钥保存文件位置
