@@ -8,7 +8,7 @@ import random
 
 vtube_api = 'ws://127.0.0.1:8001'
 
-sport_file = "sport9.json"
+sport_file = "sport10.json"
 
 
 async def vtube_read(websocket):

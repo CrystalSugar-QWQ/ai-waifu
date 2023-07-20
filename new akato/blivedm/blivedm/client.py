@@ -419,7 +419,7 @@ class BLiveClient:
 
             # 准备重连
             retry_count += 1
-            logger.warning('room=%d is reconnecting, retry_count=%d', self.room_id, retry_count)
+            # logger.warning('room=%d is reconnecting, retry_count=%d', self.room_id, retry_count)
             await asyncio.sleep(1)
 
     async def _on_ws_connect(self):
@@ -444,7 +444,7 @@ class BLiveClient:
         发送认证包
         """
         auth_params = {
-            'uid': self._uid,
+            'uid': self._uid or self.room_owner_uid or 0,
             'roomid': self._room_id,
             'protover': 3,
             'platform': 'web',

@@ -89,26 +89,6 @@ def BliveDM(question):
     asyncio.run(blivedm.sample.main(question))
 
 
-'''
-def audio_to_text(question, audio_data):
-    while True:
-        r = sr.Recognizer()
-        audio = audio_data.get()
-        try:
-            text = r.recognize_google(audio, language='zh-CN')
-            # 输出识别结果
-            print("[question]:" + text)
-            question.put(text)
-        except Exception:
-            print("[语音识别异常]")
-
-
-def listen_google():
-    audio = VoiceRW.tts.audio_listen_google()
-    return audio
-'''
-
-
 # 语音(wav)翻译——谷歌
 def wave_to_text_google(file):
     r = sr.Recognizer()
@@ -126,9 +106,9 @@ def wave_to_text_google(file):
 # 语音(wav)翻译——百度
 def wave_to_text_baidu(file):
     # 设置 APPID、API Key 和 Secret Key 申请地址https://console.bce.baidu.com/ai/#/ai/speech/overview/index
-    APP_ID = ''
-    API_KEY = ''
-    SECRET_KEY = ''
+    APP_ID = '36050058'
+    API_KEY = 'xdENMcNpGiQmeNPEDlPuF46Y'
+    SECRET_KEY = 'W5Aw2BrM78XEatjwNXiC3h4itEHlwTjM'
     # 初始化 AipSpeech 对象
     client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
@@ -180,7 +160,7 @@ def wave_to_text(question, audio_data):
         except Exception:
             pass
 
-# 有封装语音时无法再次录入的bug
+
 def listen_wave():
     audio = VoiceRW.tts.audio_listen()
     return audio
@@ -197,16 +177,17 @@ if __name__ == '__main__':
 
     # 创建进程并启动 ps:别问我为什么只开进程，懒的
     p1 = multiprocessing.Process(target=ask_out, args=(question, message, question2, tts_data))
-    p1.start()
+    # p1.start()
     p2 = multiprocessing.Process(target=vtube_sport, args=(action_data,))
-    p2.start()
+    # p2.start()
     p3 = multiprocessing.Process(target=BliveDM, args=(question, ))
     p3.start()
     p4 = multiprocessing.Process(target=voice_out, args=(question2, action_data, message, tts_data))
-    p4.start()
+    # p4.start()
     p5 = multiprocessing.Process(target=wave_to_text, args=(question, audio_data))
-    p5.start()
-
+    # p5.start()
+    
+    print("[开始监听]")
     while True:
         q = listen_wave()
         # 向问题队列放入问题
