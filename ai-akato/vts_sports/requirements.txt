@@ -1,0 +1,7 @@
+keyboard==0.13.5
+PyAudio==0.2.13
+pygtrans==1.5.2
+Requests==2.31.0
+snownlp==0.12.3
+sympy==1.11.1
+websockets==11.0.3
