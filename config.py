@@ -13,3 +13,4 @@ translate_url_baidu = ''
 
 # openai api
 api_key = ''
+
