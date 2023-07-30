@@ -24,7 +24,7 @@ python：3.10
 2、安装依赖库  
 `pip install -r requirements.txt`  
 3、进入`./config.py`配置你的api（按需填写），[openai API](https://platform.openai.com/account/api-keys)、[百度智能云](https://console.bce.baidu.com/ai/#/ai/speech/overview/index)、[百度翻译开放平台](https://fanyi-api.baidu.com/api/trans/product/desktop),进入后会有注释引导  
-4、[下载虚拟音频线软件](https://vb-audio.com/Cable/index.htm),安装时请使用**管理员权限**打开,跳提示了务必自己翻译看看写的什么
+4、[下载虚拟音频线软件](https://vb-audio.com/Cable/index.htm),安装时请使用**管理员权限**打开,跳提示了务必自己翻译看看写的什么  
 5、打开Vtube studio,找到设置启用API选项并打开,麦克风配置里打开使用麦克风,选择麦克风为`CABLE Output`,  
 动作输入将Mouth Open的输入改为`VoiceFrequency`。  
 6、这一步请不要忘了设置,涉及到口型匹配和侦听语音  
