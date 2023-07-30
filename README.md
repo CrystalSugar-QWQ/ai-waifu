@@ -34,7 +34,7 @@ python：3.10
 
 
 ## 运行
-1、打开voicevox,注意不是打开VOICEVOX.exe,而是`run.exe`，以及vtube studio  
+1、打开voicevox,注意不是打开VOICEVOX.exe,而是`run.exe`，以及打开vtube studio  
 2、进入`blivedm/sample`.py,在`TEST_ROOM_IDS`填入直播间id,  
 再找到`class MyHandler(blivedm.BaseHandler)`函数，`_on_danmaku`里面有触发问答的方式,比如弹幕里提到`白糖`和`。`,就会回复  
 3、运行`run.py`，vtube studio会弹出插件提示，只需要同意一次即可  
