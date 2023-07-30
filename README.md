@@ -39,7 +39,8 @@ python：3.10
 再找到`class MyHandler(blivedm.BaseHandler)`函数，`_on_danmaku`里面有触发问答的方式,比如弹幕里提到`白糖`和`。`,就会回复  
 3、运行`run.py`，vtube studio会弹出插件提示，只需要同意一次即可  
 4、启动后若频繁触发语音录入,请进入`listen2text`中,找到`audio = listen2text.audio_listen(THRESHOLD = 600.0)`函数中的音量阈值参数`THRESHOLD`,调高它,反之无法触发调小它，直到一个合适的值  
-5、完事，有问题请联系我，粉丝q群：592364636。（ 撅 达咩 ）  
+5、字幕功能，仅限OBS上使用，选择文本获取`input.txt`、`output.txt`即可  
+6、完事，有问题请联系我，粉丝q群：592364636。（ 撅 达咩 ）  
 
 
 ## BUG说明
