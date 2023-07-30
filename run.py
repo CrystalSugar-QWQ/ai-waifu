@@ -20,8 +20,8 @@ if __name__ == '__main__':
     blivedm_thread.start()
 
     # 语言模型功能,目前只支持gpt、glm。因为要对默认模型做人设,所以不是随便什么都能轻松接入
-    LLM_thread = threading.Thread(target=chatgpt.gpt, args=(question_data, message_data, question_re))       # 效果绝佳,烧钱速度绝佳
-    # LLM_thread = threading.Thread(target=chatglm.glm2, args=(question_data, message_data, question_re))    # 低智不推荐,省钱推荐,设定一定要非常清晰
+    # LLM_thread = threading.Thread(target=chatgpt.gpt, args=(question_data, message_data, question_re))       # 效果绝佳,烧钱速度绝佳
+    LLM_thread = threading.Thread(target=chatglm.glm2, args=(question_data, message_data, question_re))    # 低智不推荐,省钱推荐,设定一定要非常清晰
     LLM_thread.start()
 
     # 语音动作同步输出,改tts进去改
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     tts_thread.start()
 
     while True:
-        time.sleep(1)
+        time.sleep(10)
 
     listen_thread.join()
     blivedm_thread.join()

@@ -175,13 +175,8 @@ async def vtube_run():
                     break
                 time = 0 
                 for i in range(len(data)):
-                    lock.acquire()
-                    speak_flag = is_speak
-                    lock.release()
-                    if speak_flag != 1:
-                        break
                     Brows = vtube.sine_wave(time,amplitude=0.025, shifting=Brows_shifting)
-                    MouthSmile = vtube.sine_wave(time, amplitude=0.08, shifting=MouthSmile_shifting)
+                    MouthSmile = vtube.sine_wave(time, amplitude=0.02, shifting=MouthSmile_shifting)
                     parameter_values = data[i]
                     parameter_values.append({"id": "Brows", "value": Brows})
                     parameter_values.append({"id": "MouthSmile", "value": MouthSmile})
@@ -189,6 +184,11 @@ async def vtube_run():
                     await asyncio.sleep(0.02)
                     time += 0.02
                     time = round(time, 2)
+                    lock.acquire()
+                    speak_flag = is_speak
+                    lock.release()
+                    if speak_flag != 1 and parameter_values[5]["value"] > 0.45:
+                        break
         else:
             parameter_values = await wait_sport(websocket)
 
