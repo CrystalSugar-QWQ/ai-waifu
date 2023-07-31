@@ -43,8 +43,6 @@ def VoiceOut_with_Emotion(question_data, message_data, tts_data):
                 answer += message
                 answer += "\n"
                 voice_tts.generate_subtitle(answer, answer_file)
-                # 拿日语发音拼的wink
-                audio = VV.make_voice(text = "ウィンク", speaker = 46)
 
                 lock.acquire()
                 is_speak = 2
@@ -52,14 +50,12 @@ def VoiceOut_with_Emotion(question_data, message_data, tts_data):
 
                 time.sleep(0.4)
                 # 语音阅读
-                VV.read_voice(audio)
+                VV.read_voice(tts)
             else:
                 # 生成字幕,增加字幕
                 answer += message
                 answer += "\n"
                 voice_tts.generate_subtitle(answer, answer_file)
-                # 生成语音
-                audio = VV.make_voice(text = tts, speaker = 46)
 
                 # 等待语音生成完成，再启动情绪分析动作选择
                 emotion = SnowNLP(message)
@@ -69,20 +65,28 @@ def VoiceOut_with_Emotion(question_data, message_data, tts_data):
                 is_speak = 1
                 lock.release()
 
-                VV.read_voice(audio)
+                VV.read_voice(tts)
 
 
 # 翻译和数据整理
 def translate_JA(message_data, tts_data, message_res):
+    VV = voice_tts.Voicevox()
     while True:
         message = message_data.get()
         if message == "[end]":
             message_res.put("[end]")
             tts_data.put("[end]")
+        elif message == "wink。":
+            # 拿日语发音拼的wink
+            audio = VV.make_voice(text = "ウィンク", speaker = 46)
+            message_res.put(message)
+            tts_data.put(audio)
         else:
             tts = voice_tts.translateGoogle(message, "JA")
+            # 生成语音
+            audio = VV.make_voice(text = tts, speaker = 46)
             message_res.put(message)
-            tts_data.put(tts)
+            tts_data.put(audio)
 
 
 # 情绪处理，输出表情偏移量、表情动画

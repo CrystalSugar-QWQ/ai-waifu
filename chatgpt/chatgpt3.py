@@ -63,7 +63,8 @@ def transcribe_audio(file):
 
 def chatgpt_answer(name, text):
     global conversation
-    result = name + " said " + text
+    # result = name + " said " + text
+    result = text
     conversation.append({'role': 'user', 'content': result})
     while True:
         try:
