@@ -4,8 +4,13 @@
 </a>
 
 本项目的目的是做一个ai-waifu兼ai-vtuber[效果视频](https://www.bilibili.com/video/BV1zu4y1U7Ae/?share_source=copy_web&vd_source=be871ab215f9686e9cf85ae02546df3f)  
-如果有使用本项目的代码请注明出处（拒绝未经允许的商业行为），谢谢  
+如果有使用本项目的代码请注明出处，谢谢  
 ps:有问题或技术支持请联系+Q：1262852040  
+
+##   拒绝未经允许的商业行为
+## 拒绝未经允许的个人盈利行为
+##   禁止恶意个人或商用盈利
+
 
 ## 📖项目结构
 
