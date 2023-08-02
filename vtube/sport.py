@@ -113,8 +113,30 @@ async def sport_wink1(websocket, parameter):
             time = round(time, 2)
 
 
-async def expression_close(websocket, expression):
+pink_face = False
+black_face = False
+
+
+async def expression(websocket, expression = None):
+    global pink_face, black_face
     if expression == "脸红":
-        await Vts.vtube_hotkeys(websocket, "脸红")
+        if black_face is True:
+            await Vts.vtube_hotkeys(websocket, "脸黑")
+            black_face = False
+        if pink_face is False:
+            await Vts.vtube_hotkeys(websocket, "脸红")
+            pink_face = True
     elif expression == "脸黑":
-        await Vts.vtube_hotkeys(websocket, "脸黑")
+        if pink_face is True:
+            await Vts.vtube_hotkeys(websocket, "脸红")
+            pink_face = False
+        if black_face is False:
+            await Vts.vtube_hotkeys(websocket, "脸黑")
+            black_face = False
+    else:
+        if pink_face is True:
+            await Vts.vtube_hotkeys(websocket, "脸红")
+            pink_face = False
+        if black_face is True:
+            await Vts.vtube_hotkeys(websocket, "脸黑")
+            black_face = False
