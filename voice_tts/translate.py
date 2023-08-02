@@ -24,5 +24,5 @@ def translateBaidu(text, f='zh', t='jp'):
 def translateGoogle(text, target_language):
     client = Translate()
     tt = client.translate(text, target = target_language)
-    # print(tt.translatedText)
+    print("[google][JA]:", tt.translatedText)
     return tt.translatedText

@@ -8,6 +8,8 @@ import chatgpt
 # 分句
 def clause(text, message_data):
     # 使用正则表达式提取句子，并保留中文标点符号作为分隔符
+    if text[-1] not in "！？。!?.~":
+        text += "。"
     sentences = re.split(r'([！？。!?.~])', text)
 
     # 去除分隔符为空的元素
@@ -26,6 +28,7 @@ def gpt(question_data, message_data, question_re):
         question = question_data.get()
         message = chatgpt.chatgpt_answer("红糖", question)
         question_re.put(question)
+        print("[GPT3.5][白糖]:", message)
         clause(message, message_data)
         emotion = SnowNLP(message)
         if random.randint(1, 100) <= ((emotion.sentiments*100)-35) and emotion.sentiments > 0.5:
