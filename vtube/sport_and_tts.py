@@ -1,6 +1,5 @@
 import time
 import json
-import random
 import asyncio, websockets
 import threading, queue
 from snownlp import SnowNLP
@@ -28,6 +27,7 @@ def VoiceOut_with_Emotion(question_data, message_data, tts_data):
         while True:
             tts = tts_data.get()
             message = message_data.get()
+
             if tts == "[end]" and message == "[end]":
                 answer = ""
 
@@ -193,11 +193,6 @@ async def vtube_run():
                     speak_flag = is_speak
                     lock.release()
                     if speak_flag != 1 and parameter_values[5]["value"] > 0.45:
-                        break
-                    elif speak_flag == 3 and parameter_values[5]["value"] > 0.45:
-                        lock.acquire()
-                        is_speak = 1
-                        lock.release()
                         break
         else:
             parameter_values = await wait_sport(websocket)
