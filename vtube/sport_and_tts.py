@@ -137,6 +137,7 @@ async def wait_sport(websocket, time = 0):
 
 
 async def vtube_run():
+    global is_speak
     # 连接上服务器,并初始化
     try:
         websocket = await websockets.connect('ws://127.0.0.1:8001')
