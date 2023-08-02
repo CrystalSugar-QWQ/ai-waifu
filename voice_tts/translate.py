@@ -18,6 +18,7 @@ def translateBaidu(text, f='zh', t='jp'):
     data = json.loads(content)
     result = str(data['trans_result'][0]['dst'])
     # print(result)
+    print("[baidu][JA]:", result)
     return result
 
 

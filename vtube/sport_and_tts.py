@@ -93,6 +93,7 @@ def translate_JA(message_data, tts_data, message_res):
             tts_data.put(audio)
         else:
             tts = voice_tts.translateGoogle(message, "JA")
+            # tts = voice_tts.translateBaidu(message, f='zh', t='jp')
             # 生成语音
             audio = VV.make_voice(text = tts, speaker = 46)
             message_res.put(message)
