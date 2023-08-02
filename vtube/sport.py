@@ -132,7 +132,7 @@ async def expression(websocket, expression = None):
             pink_face = False
         if black_face is False:
             await Vts.vtube_hotkeys(websocket, "脸黑")
-            black_face = False
+            black_face = True
     else:
         if pink_face is True:
             await Vts.vtube_hotkeys(websocket, "脸红")

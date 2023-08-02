@@ -195,6 +195,7 @@ async def vtube_run(expression_data):
                 time = 0 
                 for i in range(len(data)):
                     await emotion_control(websocket, expression_data)
+                    Brows_shifting, MouthSmile_shifting, emotion_file = await emotion_handle(websocket)
                     Brows = vtube.sine_wave(time,amplitude=0.025, shifting=Brows_shifting)
                     MouthSmile = vtube.sine_wave(time, amplitude=0.02, shifting=MouthSmile_shifting)
                     parameter_values = data[i]
