@@ -11,7 +11,7 @@ import voice_tts
 
 # 全局变量
 emotion_data = 0
-is_speak = 0
+is_speak = 0    # 运动识别变量，0 待机状态，1 运动状态，2 wink状态，3 临时切换
 lock = threading.Lock()
 
 
@@ -160,11 +160,11 @@ async def vtube_run():
             with open(file, "r") as config_file:     # 读文件
                 data = json.load(config_file)
         
-            parameter_values = await vtube.value_homing(websocket, parameter_values, time_end = 0.3, 
+            while True:
+                parameter_values = await vtube.value_homing(websocket, parameter_values, time_end = 0.3, 
                                                       FaceAngleX_end = data[0][0]["value"], FaceAngleY_end = data[0][1]["value"], FaceAngleZ_end = data[0][2]["value"], 
                                                       EyeRightX_end = data[0][3]["value"], EyeRightY_end = data[0][4]["value"], EyeOpen_end = data[0][5]["value"], 
                                                       Brows_end = Brows_shifting, MouthSmile_end = MouthSmile_shifting)
-            while True:
                 lock.acquire()
                 speak_flag = is_speak
                 lock.release()
@@ -192,6 +192,11 @@ async def vtube_run():
                     speak_flag = is_speak
                     lock.release()
                     if speak_flag != 1 and parameter_values[5]["value"] > 0.45:
+                        break
+                    elif speak_flag == 3 and parameter_values[5]["value"] > 0.45:
+                        lock.acquire()
+                        is_speak = 1
+                        lock.release()
                         break
         else:
             parameter_values = await wait_sport(websocket)

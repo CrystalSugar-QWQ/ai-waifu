@@ -24,10 +24,10 @@ def clause(text, message_data):
 def gpt(question_data, message_data, question_re):
     while True:
         question = question_data.get()
-        question_re.put(question)
         message = chatgpt.chatgpt_answer("红糖", question)
+        question_re.put(question)
         clause(message, message_data)
         emotion = SnowNLP(message)
-        if random.randint(1, 100) <= ((emotion.sentiments*100)-20) and emotion.sentiments > 0.5:
+        if random.randint(1, 100) <= ((emotion.sentiments*100)-35) and emotion.sentiments > 0.5:
             message_data.put("wink。")
         message_data.put("[end]")   # 告知回答结束
