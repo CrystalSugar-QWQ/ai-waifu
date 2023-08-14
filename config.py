@@ -9,7 +9,7 @@ wav2text_baidu_SECRET_KEY = ''
 # 百度翻译开放平台api
 translate_baidu_appid = ''
 translate_secretKey = ''
-translate_url_baidu = ''
+translate_url_baidu = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
 
 # openai api
 api_key = ''
